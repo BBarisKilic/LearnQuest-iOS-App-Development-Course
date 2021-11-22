@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        swoosh.frame = CGRect(x: view.frame.width / 2 - swoosh.frame.width / 2, y: 50, width: swoosh.frame.width, height: swoosh.frame.height)
+        
+        backgroundImage.frame = view.frame
     }
 
 
