@@ -14,6 +14,7 @@ class LeagueVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         player = Player()
     }
     
@@ -36,5 +37,11 @@ class LeagueVC: UIViewController {
     
     @IBAction func onNextTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "skillSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC {
+            skillVC.player = player
+        }
     }
 }
